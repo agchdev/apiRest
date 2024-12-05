@@ -6,7 +6,7 @@
 
     try{
         $conexion = new PDO("mysql: host=".$host.";dbname=".$dbname.";charset=UTF8", $username, $password);
-        echo "<p>Conectado con exito</p>";
-    }catch(){
+    }catch(PDOException $e){
+        echo "Ha ocurrido el error: ".$e->getMessage();
     }
 ?>

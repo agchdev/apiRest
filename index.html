@@ -7,6 +7,26 @@
 </head>
 <body>
     <button>cargar</button>
-    
+    <ul></ul>
+    <script>
+        const btn = document.querySelector("button");
+        const url = "datos.php";
+        const ul = document.querySelector("ul")
+        btn.addEventListener("click", () => {
+            ul.innerHTML = '';
+            fetch(url)
+            .then(respuesta => respuesta.json())
+            .then(datos => {
+                datos.forEach(curso => {
+                    ul.innerHTML += `
+                        <li>${curso.tituloCurso}</li>
+                    `;
+                });
+            })
+            // let cargarDatos = async () => {
+
+            // }
+        })
+    </script>
 </body>
 </html>
