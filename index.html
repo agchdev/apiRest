@@ -16,11 +16,13 @@
             min-width: 20%;
             background-color: crimson;
             color: white;
-            
+            border: none;
         }
     </style>
 </head>
 <body>
+
+    <h1>Curso Diseño Web</h1>
 
     <form action="">
         <input type="text" name="tituloCurso" placeholder="tituloCurso">
@@ -37,7 +39,15 @@
     <script>
         const btn = document.querySelector("button");
         const url = "datos.php";
-        const ul = document.querySelector("ul")
+        const ul = document.querySelector("ul");
+        const form = document.forms[0];
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            console.log(formData.get(''))
+        })
+
         btn.addEventListener("click", () => {
             ul.innerHTML = '';
             fetch(url)
