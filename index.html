@@ -4,10 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        input, textarea{
+            display: block;
+            margin: 20px 0;
+            padding: 10px;
+            min-width: 30%;
+        }
+
+        input[type="submit"]{
+            min-width: 20%;
+            background-color: crimson;
+            color: white;
+            
+        }
+    </style>
 </head>
 <body>
+
+    <form action="">
+        <input type="text" name="tituloCurso" placeholder="tituloCurso">
+        <textarea name="textoCurso" placeholder="textoCurso"></textarea>
+        <input type="text" name="imgCurso" placeholder="nombreImagen">
+        <input type="submit" name="insertarDatos" value="Insertar datos">
+
+    </form>
+
     <button>cargar</button>
+
     <ul></ul>
+
     <script>
         const btn = document.querySelector("button");
         const url = "datos.php";
