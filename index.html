@@ -46,7 +46,9 @@
             e.preventDefault();
             let formData = new FormData(form);
             insertarDatos(formData);
-            cargarDatos();
+            setTimeout(() => {
+                cargarDatos();
+            }, 1000);
         })
 
         function insertarDatos(datosForm){
