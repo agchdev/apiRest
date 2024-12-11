@@ -2,6 +2,8 @@
     require_once("inc/conexion.php");
 
     $header = getallheaders();
+    $dominioAceptado = "http://192.168.1.161";
+    $referencia = $_SERVER['HTTP_REFERER']
 
     if ($header['Authorization'] ==='0123456789') {
 
@@ -10,7 +12,7 @@
             $textoCurso = $_POST["textoCurso"];
             $imgCurso = $_POST["imgCurso"];
 
-            $consulta = "INSERT INTO cursosdb(tituloCurso, textoCurso, imgCurso) VALUES (?, ?, ?)";
+            // $consulta = "INSERT INTO cursosdb(tituloCurso, textoCurso, imgCurso) VALUES (?, ?, ?)";
             $sentencia = $conexion->prepare($consulta);
             $sentencia->execute([$tituloCurso, $textoCurso, $imgCurso]);
             if($sentencia){
