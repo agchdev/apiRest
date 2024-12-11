@@ -9,8 +9,9 @@
         $consulta = "INSERT INTO cursosdb(tituloCurso, textoCurso, imgCurso) VALUES (?, ?, ?)";
         $sentencia = $conexion->prepare($consulta);
         $sentencia->execute([$tituloCurso, $textoCurso, $imgCurso]);
-        
-        echo "<p>AÑADIDO CON EXITO</p>";
+        if($sentencia){
+            echo json_encode("OK");
+        }
     }else{
         header("Location:index.html");
     }

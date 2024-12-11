@@ -56,13 +56,12 @@
                 method:"POST",
                 body: datosForm,
             })
+            .then(respuesta=>respuesta.json())
+            .then(datos=>console.log(datos))
         }
 
         btn.addEventListener("click", () => {
             cargarDatos();
-            // let cargarDatos = async () => {
-
-            // }
         })
 
         function cargarDatos(){
