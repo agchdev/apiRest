@@ -46,18 +46,22 @@
             e.preventDefault();
             let formData = new FormData(form);
             insertarDatos(formData);
-            setTimeout(() => {
-                cargarDatos();
-            }, 1000);
         })
 
         function insertarDatos(datosForm){
             fetch("insertar.php", {
                 method:"POST",
+                headers: {
+                    'Authorization':'Bearer 0123456789'
+                },
                 body: datosForm,
             })
             .then(respuesta=>respuesta.json())
-            .then(datos=>console.log(datos))
+            .then(datos=>{
+                if (datos=="OK") {
+                    cargarDatos();
+                }
+            })
         }
 
         btn.addEventListener("click", () => {
