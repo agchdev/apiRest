@@ -1,9 +1,9 @@
 <?php
     require_once("inc/conexion.php");
 
-    $header = isset(getallheaders(['Authorization']) ? getallheaders(['Authorization']) : null);
+    $header = getallheaders();
 
-    if (substr($header,7) === '0123456789') {
+    if ($header['Authorization'] ==='0123456789') {
 
         if(isset($_POST["tituloCurso"], $_POST["textoCurso"], $_POST["imgCurso"])){
             $tituloCurso = $_POST["tituloCurso"];
@@ -21,7 +21,7 @@
         }
     
     }else{
-        
+
     }
 
 ?>
