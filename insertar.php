@@ -1,6 +1,7 @@
 <?php
     require_once("inc/conexion.php");
 
+    $header = isset(getallheaders(['Authorization']));
     if(isset($_POST["tituloCurso"], $_POST["textoCurso"], $_POST["imgCurso"])){
         $tituloCurso = $_POST["tituloCurso"];
         $textoCurso = $_POST["textoCurso"];
